@@ -1,4 +1,4 @@
-package com.example.todoapp.data
+package com.example.todoapp.data.entity
 
 import java.io.Serializable
 
