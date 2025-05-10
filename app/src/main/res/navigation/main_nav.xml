@@ -21,7 +21,11 @@
         android:id="@+id/detailFragment"
         android:name="com.example.todoapp.ui.fragment.DetailFragment"
         android:label="fragment_detail"
-        tools:layout="@layout/fragment_detail" />
+        tools:layout="@layout/fragment_detail" >
+        <action
+            android:id="@+id/detail_to_main"
+            app:destination="@id/mainFragment" />
+    </fragment>
     <fragment
         android:id="@+id/updateFragment"
         android:name="com.example.todoapp.ui.fragment.UpdateFragment"
@@ -29,6 +33,9 @@
         tools:layout="@layout/fragment_update" >
         <argument
             android:name="task"
-            app:argType="com.example.todoapp.data.entity.Task" />
+            app:argType="com.example.todoapp.data.entity.Tasks" />
+        <action
+            android:id="@+id/update_to_main"
+            app:destination="@id/mainFragment" />
     </fragment>
 </navigation>

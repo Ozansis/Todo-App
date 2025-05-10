@@ -34,10 +34,10 @@ android {
         }
     }
     compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_17
-        targetCompatibility = JavaVersion.VERSION_17    }
+        sourceCompatibility = JavaVersion.VERSION_1_8
+        targetCompatibility = JavaVersion.VERSION_1_8    }
     kotlinOptions {
-        jvmTarget = "17"
+        jvmTarget = "1.8"
     }
 }
 
@@ -58,6 +58,12 @@ dependencies {
     implementation("androidx.activity:activity-ktx:1.6.1")
     implementation("com.google.dagger:hilt-android:2.56.2")
     kapt("com.google.dagger:hilt-compiler:2.56.2")
+    implementation ("androidx.room:room-runtime:2.7.1")
+    kapt("androidx.room:room-compiler:2.5.0-beta02")
+    implementation("androidx.room:room-ktx:2.7.1")
+    implementation("androidx.lifecycle:lifecycle-runtime-ktx:2.9.0")
+
+
 
 
 

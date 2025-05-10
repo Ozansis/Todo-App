@@ -9,7 +9,7 @@
             type="com.example.todoapp.ui.fragment.UpdateFragment" />
         <variable
             name="taskNesnesi"
-            type="com.example.todoapp.data.entity.Task" />
+            type="com.example.todoapp.data.entity.Tasks" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -35,7 +35,7 @@
             android:layout_height="wrap_content"
             android:layout_marginBottom="340dp"
             android:text="Update"
-            android:onClick="@{()->updateFragment.buttonUpdateTask(taskNesnesi.id,etUpdate.getText().toString())}"
+            android:onClick="@{()->updateFragment.buttonUpdateTask(taskNesnesi.id,etUpdate.getText().toString(),button)}"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"

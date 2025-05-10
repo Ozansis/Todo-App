@@ -8,6 +8,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.viewModels
+import androidx.navigation.Navigation
 import androidx.navigation.fragment.navArgs
 import com.example.todoapp.R
 import com.example.todoapp.databinding.FragmentUpdateBinding
@@ -40,8 +41,9 @@ class UpdateFragment : Fragment() {
     }
 
 
-    fun buttonUpdateTask(id: Int,task: String){
+    fun buttonUpdateTask(id: Int,task: String,view: View){
        viewModel.update(id,task)
+        Navigation.findNavController(view).navigate(R.id.update_to_main)
 
 
     }

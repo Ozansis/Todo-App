@@ -5,11 +5,11 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.navigation.Navigation
 import androidx.recyclerview.widget.RecyclerView
-import com.example.todoapp.data.entity.Task
+import com.example.todoapp.data.entity.Tasks
 import com.example.todoapp.databinding.TaskCardViewBinding
 import com.example.todoapp.ui.fragment.MainFragmentDirections
 
-class TaskAdapter(var context: Context,var taskList: List<Task>) : RecyclerView.Adapter<TaskAdapter.CardViewHolder>() {
+class TaskAdapter(var context: Context,var taskList: List<Tasks>) : RecyclerView.Adapter<TaskAdapter.CardViewHolder>() {
 
 
     inner class CardViewHolder(var view: TaskCardViewBinding): RecyclerView.ViewHolder(view.root)
