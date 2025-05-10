@@ -1,52 +1,40 @@
 package com.example.todoapp.data.datasource
 
-import android.util.Log
-import com.example.todoapp.data.entity.Task
-import kotlinx.coroutines.CoroutineScope
+import com.example.todoapp.data.entity.Tasks
+import com.example.todoapp.room.TaskDao
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 
-class TaskDataSource {
+class TaskDataSource(var tdao: TaskDao) {
 
 
-    suspend fun loadTask() : List<Task> = withContext(Dispatchers.IO){
-
-        val taskList = ArrayList<Task>()
-        val task1 = Task(1,"Oku")
-        val task2 = Task(2,"Yaz")
-        val task3 = Task(3,"Çalış")
-        val task4 = Task(4,"Yat")
-        taskList.add(task1)
-        taskList.add(task2)
-        taskList.add(task3)
-        taskList.add(task4)
-
-        return@withContext taskList
+    suspend fun loadTask() : List<Tasks> =
+        withContext(Dispatchers.IO){
+        return@withContext tdao.loadTask()
 
 
     }
 
 
-    suspend fun search(searchWord: String): List<Task> = withContext(Dispatchers.IO){
-        Log.e("Search task",searchWord)
-        val taskList = ArrayList<Task>()
-        val task1 = Task(1,"Oku")
-        taskList.add(task1)
+    suspend fun search(searchWord: String): List<Tasks> = withContext(Dispatchers.IO){
 
-        return@withContext taskList
+        return@withContext tdao.search(searchWord)
 
 
     }
 
 
-   suspend fun add(task: String){
-        Log.e("ekle",task)
+   suspend fun add(task: String) = withContext(Dispatchers.IO){
+      val newTask = Tasks(0,task)
+       tdao.add(newTask)
 
    }
 
 
-   suspend fun update(id: Int,task: String){
-        Log.e("x","${id},${task}")
+   suspend fun update(id: Int,task: String) = withContext(Dispatchers.IO){
+       val newTask = Tasks(id,task)
+       tdao.update(newTask)
+
 
 
    }

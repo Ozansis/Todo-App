@@ -2,7 +2,7 @@ package com.example.todoapp.ui.viewmodel
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.example.todoapp.data.entity.Task
+import com.example.todoapp.data.entity.Tasks
 import com.example.todoapp.data.repository.TaskRepository
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.CoroutineScope
@@ -13,7 +13,7 @@ import javax.inject.Inject
 @HiltViewModel
 class MainViewModel @Inject constructor(var repo: TaskRepository) : ViewModel() {
 
-    val taskList = MutableLiveData<List<Task>>()
+    val taskList = MutableLiveData<List<Tasks>>()
 
 
     init {

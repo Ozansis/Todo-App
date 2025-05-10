@@ -1,7 +1,6 @@
 package com.example.todoapp.ui.fragment
 
 import android.os.Bundle
-import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -9,9 +8,7 @@ import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.viewModels
 import androidx.navigation.Navigation
-import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.todoapp.R
-import com.example.todoapp.data.entity.Task
 import com.example.todoapp.databinding.FragmentMainBinding
 import com.example.todoapp.ui.adapter.TaskAdapter
 import com.example.todoapp.ui.viewmodel.MainViewModel
